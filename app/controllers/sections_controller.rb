@@ -7,7 +7,7 @@ class SectionsController < ApplicationController
 
     def index
         sections = Section.all
-        render json: section
+        render json: sections, include: [:tips]
     end
 
     def show

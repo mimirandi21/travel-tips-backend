@@ -13,7 +13,7 @@ class TipsController < ApplicationController
 
     def index
         tips = Tip.all
-        render json: tip
+        render json: tips
     end
 
     def show
