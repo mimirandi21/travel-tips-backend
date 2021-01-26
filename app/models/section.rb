@@ -1,4 +1,4 @@
-class Place < ApplicationRecord
+class Section < ApplicationRecord
     has_many :tips
-    has_many :sections
+    belongs_to :sections
 end

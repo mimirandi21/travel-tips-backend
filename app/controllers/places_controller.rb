@@ -8,7 +8,6 @@ class PlacesController < ApplicationController
         Section.create(name: "General", place_id: place.id)
         Section.create(name: "Packing", place_id: place.id)
         Section.create(name: "Food", place_id: place.id)
-        sections = Section.where(place_id: place.id)
         render json: PlaceSerializer.new(place).to_serialized_json
     end
 

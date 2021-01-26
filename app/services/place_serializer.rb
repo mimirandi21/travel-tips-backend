@@ -5,8 +5,16 @@ class PlaceSerializer
     end
 
     def to_serialized_json
-        @plobj.to_json(:include => {
-            :name
-        })
+        options = {
+            include: {
+                sections: {
+                    only: [:id, :name, :place_id]
+                },
+                tips: {
+                    only: [:id, :section_id, :place_id, :info, :color, :like_count, :dislike_count]
+                }
+            }
+        }
+        @plobj.to_json(options)
     end
 end
