@@ -1,7 +1,7 @@
 class PlaceSerializer
 
-    def initialize(plobj)
-        @plobj = plobj
+    def initialize(pl_obj)
+        @po = pl_obj
     end
 
     def to_serialized_json
@@ -15,6 +15,6 @@ class PlaceSerializer
                 }
             }
         }
-        @plobj.to_json(options)
+        @po.to_json(options)
     end
 end
