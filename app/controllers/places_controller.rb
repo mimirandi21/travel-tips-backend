@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
     def create
-        place = Place.create(places_params(:name))
+        place = Place.create(place_params(:name))
         Section.create(name: "Attractions", place_id: place.id)
         Section.create(name: "Weather", place_id: place.id)
         Section.create(name: "Hotels", place_id: place.id)
@@ -26,7 +26,10 @@ class PlacesController < ApplicationController
 
     private
 
-    def places_params(*args)
-        params.require(:places).permit(*args)
+    def place_params(*args)
+        params.require(:place).permit(
+            *args,
+            section_attributes: [:name, :place_id]
+        )
     end
 end

@@ -14,4 +14,10 @@ class SectionsController < ApplicationController
         section = Section.find(params[:id])
         render json: section
     end
+
+    private
+
+    def section_params(*args)
+        params.require(:section).permit(*args)
+    end
 end
