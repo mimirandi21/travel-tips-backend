@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :tips, only:[:create, :index, :show, :update]
-  resources :sections, only: [:create, :index, :show]
-  resources :places, only: [:create, :index, :show]
+  resources :tips
+  resources :sections
+  resources :places
   root 'application#index'
-  
+  get '/' to 'places#index'
+  get '/favicon.ico' to 'places#index'
 end
