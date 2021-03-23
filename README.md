@@ -1,4 +1,4 @@
-# Travel Tipa
+# Travel Tips
 
 An app created to bring travellers together to help each other in their exploration of the world around us!
 
